@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_api_bloc/screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,14 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Movie Api Bloc',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(
-        body: Center(child: Text('BLOC API'))
-      ),
+      home: HomeScreen(),
     );
   }
 }

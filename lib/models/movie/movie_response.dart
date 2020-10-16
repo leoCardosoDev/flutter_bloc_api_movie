@@ -4,11 +4,11 @@ class MovieResponse {
   final List<Movie> movies;
   final String error;
 
-  MovieResponse({this.movies, this.error});
+  MovieResponse(this.movies, this.error);
 
   MovieResponse.fromJson(Map<String, dynamic> json)
       : movies = (json['results'] as List)
-            .map((index) => Movie.fromJson(json))
+            .map((index) => new Movie.fromJson(index))
             .toList(),
         error = "";
 

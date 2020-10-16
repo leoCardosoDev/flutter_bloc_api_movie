@@ -8,7 +8,7 @@ class PersonResponse {
 
   PersonResponse.fromJson(Map<String, dynamic> json)
       : persons = (json['persons'] as List)
-            .map((index) => Person.fromJson(json))
+            .map((index) => Person.fromJson(index))
             .toList(),
         error = "";
 

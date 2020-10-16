@@ -8,7 +8,7 @@ class GenreResponse {
 
   GenreResponse.fromJson(Map<String, dynamic> json)
       : genres = (json['genres'] as List)
-            .map((index) => Genre.fromJson(json))
+            .map((index) => Genre.fromJson(index))
             .toList(),
         error = "";
 
