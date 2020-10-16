@@ -1,5 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_api_bloc/widgets/genres/genres.dart';
 import 'package:movie_api_bloc/widgets/now_playing.dart';
 
 import '../style/theme.dart' as Style;
@@ -27,7 +28,8 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          NowPlaying(),
+          NowPlayingWidget(),
+          GenresWidget(),
         ],
       ),
     );
