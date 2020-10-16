@@ -6,12 +6,12 @@ import 'package:movie_api_bloc/models/movie/movie.dart';
 import 'package:movie_api_bloc/models/movie/movie_response.dart';
 import '../style/theme.dart' as Style;
 
-class NowPlaying extends StatefulWidget {
+class NowPlayingWidget extends StatefulWidget {
   @override
-  _NowPlayingState createState() => _NowPlayingState();
+  _NowPlayingWidgetState createState() => _NowPlayingWidgetState();
 }
 
-class _NowPlayingState extends State<NowPlaying> {
+class _NowPlayingWidgetState extends State<NowPlayingWidget> {
   @override
   void initState() {
     super.initState();
@@ -27,7 +27,7 @@ class _NowPlayingState extends State<NowPlaying> {
           if (snapshot.data.error != null && snapshot.data.error.length > 0) {
             return _buildErrorWidget();
           }
-          return _buildNowPlayingWidget(snapshot.data);
+          return _buildNowPlayingWidgetWidget(snapshot.data);
         } else if (snapshot.hasError) {
           return _buildErrorWidget();
         } else {
@@ -51,7 +51,7 @@ class _NowPlayingState extends State<NowPlaying> {
     );
   }
 
-  Widget _buildNowPlayingWidget(MovieResponse data) {
+  Widget _buildNowPlayingWidgetWidget(MovieResponse data) {
     List<Movie> movies = data.movies;
     if (movies.length == 0) {
       return Container(
