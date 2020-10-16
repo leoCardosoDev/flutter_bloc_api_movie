@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:movie_api_bloc/models/movie/movie_response.dart';
 import 'package:movie_api_bloc/repository/movie_repository.dart';
 import 'package:rxdart/subjects.dart';
@@ -12,11 +13,17 @@ class MoviesListByGenresBloc {
     _subject.sink.add(response);
   }
 
-  dispose() {
+  void drainStream() {
+    _subject.value = null;
+  }
+
+  @mustCallSuper
+  void dispose() async {
+    await _subject.drain();
     _subject.close();
   }
 
   BehaviorSubject<MovieResponse> get subject => _subject;
 }
 
-final moviesByGenresBloc = MoviesListByGenresBloc();
+final moviesListByGenresBloc = MoviesListByGenresBloc();
