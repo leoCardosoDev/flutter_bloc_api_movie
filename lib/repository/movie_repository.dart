@@ -3,7 +3,7 @@ import 'package:movie_api_bloc/models/genre/genre_response.dart';
 import 'package:movie_api_bloc/models/movie/movie_response.dart';
 import 'package:movie_api_bloc/models/person/person_response.dart';
 
-class MoveRepository {
+class MovieRepository {
   final String apiKey = "3ff938334c41310593bad6d107a11cac";
   static String mainUrl = "https://api.themoviedb.org/3/";
   final Dio _dio = Dio();
