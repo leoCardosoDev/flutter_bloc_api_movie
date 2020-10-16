@@ -19,4 +19,4 @@ class GenresListBloc {
   BehaviorSubject<GenreResponse> get subject => _subject;
 }
 
-final genresBloc = GenresListBloc();
+final genresListBloc = GenresListBloc();
